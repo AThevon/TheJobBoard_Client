@@ -13,4 +13,6 @@
 
 body {
   font-family: var(--main-font);
+  color: #000;
+  background-color: #F4F6F8;
 }
