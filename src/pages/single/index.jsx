@@ -4,6 +4,7 @@ import useFetch from '../../hooks/useFetch';
 import moment from 'moment';
 
 import Header from '../../components/Header';
+import Loader from '../../components/Loader';
 
 
 const Single = () => {
@@ -16,10 +17,10 @@ const Single = () => {
     return (
         <>
             <Header />
-            {isLoading && <p>Loading...</p>}
+            {isLoading && <Loader />}
             {error && <p>{error}</p>}
             {data && (
-                <>
+                <> 
                     <section className='single-section'>
                         <div className='header-single'>
                             <div

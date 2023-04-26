@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Single from './pages/single';
 import Search from './pages/search';
+import Admin from './pages/Admin';
 import Error404 from './pages/Error404';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route path="/offers/:id" element={<Single />} />
           <Route path="/search" element={<Search />} />
+          <Route path="/admin" element={<Admin />} />
           <Route path="*" element={<Error404 />} />
         </Routes>
       </Router>

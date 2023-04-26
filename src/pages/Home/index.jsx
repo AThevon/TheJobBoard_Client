@@ -5,6 +5,7 @@ import Header from '../../components/Header';
 import Searchbar from '../../components/Searchbar';
 import Card from '../../components/Card';
 import Button from '../../components/Button';
+import Loader from '../../components/Loader';
 
 const Home = () => {
     const [numItems, setNumItems] = useState(12);
@@ -29,7 +30,7 @@ const Home = () => {
         <>
             <Header />
             <Searchbar />
-            {isLoading && <p>Loading...</p>}
+            {isLoading && <Loader />}
             {error && <p>{error}</p>}
             <section className="main-container">
                 {data &&

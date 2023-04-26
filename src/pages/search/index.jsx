@@ -8,7 +8,7 @@ import Searchbar from '../../components/Searchbar';
 import Card from '../../components/Card';
 import Button from '../../components/Button';
 import NoResult from '../../components/NoResult';
-// import Loader from '../../components/Loader';
+import Loader from '../../components/Loader';
 
 const Search = () => {
 
@@ -103,7 +103,7 @@ const Search = () => {
             {error ?
                 <p className='indicator'>{error}</p> :
                 isLoading ?
-                    <p>Loading...</p> :
+                    <Loader /> :
                     dataSearch && dataSearch.length === 0 ?
                         <NoResult /> :
                         dataSearch && dataSearch.length > 0 && (

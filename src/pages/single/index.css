@@ -41,7 +41,16 @@ a.company-btn {
     text-decoration: none;
 }
 
+a.company-btn:hover {
+    background-color: #5964E02c;
+}
+
 a.company-btn.apply {
+    background-color: #5964E0;
+    color: #fff;
+}
+
+a.company-btn.apply::hover {
     background-color: #5964E0;
     color: #fff;
 }

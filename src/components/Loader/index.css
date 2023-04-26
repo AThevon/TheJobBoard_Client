@@ -1,0 +1,46 @@
+.loader {
+    margin-top: 12rem;
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+    position: relative;
+    animation: rotate 1s linear infinite;
+    z-index: 1;
+}
+
+.loader::before,
+.loader::after {
+	content: "";
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	top: 0;
+	background-color: var(--light-violet);
+	border-radius: 50%;
+	animation: scale 1s infinite ease-in-out;
+}
+
+.loader::before {
+	top: auto;
+	bottom: 0;
+	background-color: var(--violet);
+	animation-delay: 0.5s;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes scale {
+    0%, 100% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1);
+    }
+}
