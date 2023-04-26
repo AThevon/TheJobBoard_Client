@@ -1,43 +1,77 @@
-.main-searchbar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.searchbar {
     position: absolute;
     top: 12rem;
     left: 50%;
     transform: translateX(-50%);
-    /* width: 100%; */
-}
-
-.searchbar {
+    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 75vw;
-    max-width: 110rem;
-    height: 8rem;
-    background-color: var(--white);
     border-radius: 0.5rem;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    padding-inline: 16.5rem;
 }
 
 .searchbar li {
-    width: 100%;
-}
-
-.searchbar input {
-    width: 100%;
-    padding-inline: 3rem;
-}
-
-.third-input {
     display: flex;
     align-items: center;
-    justify-content: center;
+    height: 8rem;
+    background-color: var(--white);
+    width: 100%;
+    font-size: 1.6rem;
 }
 
-.third-input input {
-    width: 20%;
-    height: 2rem;
+
+li.first-input {
+    border-radius: 5px 0 0 5px;
 }
 
+li.first-input input {
+    border: none;
+    outline: none;
+    width: 100%;
+    color: #979797;
+    
+}
+
+li.second-input {
+    border-inline: .5px solid #6e809849;
+}
+
+li.second-input input{
+    color: #979797;
+    width: 100%;
+}
+
+li.third-input {
+    border-radius:0 5px 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 3rem 1.6rem;
+    color: #000;
+    font-weight: 700;
+}
+
+input[type="checkbox"] {
+    margin: 0;
+    width: 2.4rem;
+    height: 2.4rem;
+    color: #979797;
+    position: relative;
+    background-color: #979797;
+}
+
+
+input[type="checkbox"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2.4rem;
+    height: 2.4rem;
+    background-color: #979797;
+}
+
+li.third-input label {
+    user-select: none;
+}

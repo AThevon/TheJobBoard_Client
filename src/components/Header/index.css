@@ -41,7 +41,3 @@ header.header {
     /* border-radius: 50%; */
     transform: rotate(20deg);
 }
-
-h1 {
-    color: var(--white);
-}

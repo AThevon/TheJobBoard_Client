@@ -1,0 +1,140 @@
+section.single-section {
+    padding-inline: 28rem;
+    transform: translateY(-4rem);
+}
+
+.header-single {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+}
+
+.single-logo {
+    width: 14rem;
+    height: 14rem;
+}
+
+.single-logo img {
+    object-fit: contain;
+}
+
+.company-single {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-inline: 4rem auto;
+}
+
+.company-single h2 {
+    font-size: 2.4rem;
+}
+
+a.company-btn {
+    padding: 1.6rem 3.6rem;
+    border-radius: 5px;
+    font-weight: 700;
+    background-color: #5964e02c;
+    color: #5964E0;
+    margin-right: 4rem;
+    text-decoration: none;
+}
+
+a.company-btn.apply {
+    background-color: #5964E0;
+    color: #fff;
+}
+
+.main-single {
+    margin-top: 4rem;
+    background-color: #fff;
+    padding: 4.8rem;
+    text-align: start;
+}
+
+.main-title-single {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title-single .time {
+    margin: 0;
+}
+
+.title-single .location {
+    margin: 0;
+    margin-top: 2rem;
+}
+
+.main-title-single a {
+    margin: 0;
+}
+
+.main-single p.description {
+    margin-block: 4rem;
+    text-align: justify;
+}
+
+h3.h3-single {
+    font-weight: 700;
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+
+.main-single p.content {
+    margin-block: 2.8rem 2.4rem;
+    text-align: justify;
+}
+
+.main-single ul,
+.main-single ol {
+    margin-bottom: 4.8rem;
+    line-height: 2;
+}
+
+.main-single ul li {
+    list-style-type: disc;
+    margin-left: 1.6rem;
+    padding-left: 3rem;
+}
+
+.main-single ol {
+    padding: 0;
+}
+
+.main-single ol li {
+    position: relative;
+    margin-left: 4.6rem;
+
+
+}
+
+.main-single ol li::before {
+    content: counter(list-item);
+    position: absolute;
+    left: -4.6rem;
+    color: #5964E0;
+    font-weight: 700;
+}
+
+
+
+footer {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 28rem;
+    background-color: #fff; 
+    margin-top: 8rem;
+    padding-block: 2.4rem;
+    text-align: start;
+    line-height: 2;
+}
+
+footer a.apply {
+    margin: 0;
+}
+

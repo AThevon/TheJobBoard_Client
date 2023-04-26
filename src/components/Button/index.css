@@ -1,0 +1,44 @@
+button {
+    padding: 1.6rem 3.6rem;
+    background-color: var(--violet);
+    color: var(--white);
+    border-radius: 5px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+button.load-more:hover {
+    animation: 'btn-anim' .6s linear;
+}
+
+button:disabled {
+    background-color: #727272;
+    cursor: not-allowed;
+    transition: 0.2s;
+}
+
+button:disabled:hover {
+    animation: 'btn-anim-disabled' .3s linear;
+}
+
+@keyframes btn-anim {
+    0%, 100% {
+        transform: scale(1);
+    }
+    30% {
+        transform: scale(1.07);
+    }
+}
+
+
+@keyframes btn-anim-disabled {
+    0%, 50%, 100% {
+        transform: translateX(0);
+    }
+    30% {
+        transform: translateX(-6px);
+    }
+    70% {
+        transform: translateX(6px);
+    }
+}

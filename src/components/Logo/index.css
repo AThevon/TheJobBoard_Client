@@ -1,0 +1,13 @@
+a {
+    text-decoration: none;
+    z-index: 2;
+}
+
+h1 {
+    color: var(--white);
+    transition: .3s;
+}
+
+h1:hover {
+    scale: 1.1;
+}
