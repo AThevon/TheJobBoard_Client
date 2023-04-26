@@ -13,7 +13,6 @@ const Single = () => {
 
     const { data, error, isLoading } = useFetch(url);
 
-
     return (
         <>
             <Header />
@@ -23,14 +22,20 @@ const Single = () => {
                 <>
                     <section className='single-section'>
                         <div className='header-single'>
-                            <div className="single-logo" style={{ backgroundColor: data.logoBackground }}>
+                            <div
+                                className="single-logo"
+                                style={{ backgroundColor: data.logoBackground }}>
                                 <img src={data.logo} alt={data.company} />
                             </div>
                             <div className="company-single">
                                 <h2>{data.company}</h2>
                                 <p className='grey'>{data.website}</p>
                             </div>
-                            <a href={data.website} className='company-btn' target='__blank'>Company Site</a>
+                            <a href={data.website}
+                                className='company-btn'
+                                target='__blank'>
+                                Company Site
+                            </a>
                         </div>
                         <div className='main-single'>
                             <div className="main-title-single">
@@ -41,17 +46,25 @@ const Single = () => {
                                     <h2>{data.position}</h2>
                                     <p className='location'>{data.location}</p>
                                 </div>
-                                <a href={data.website} className='company-btn apply' target='__blank'>Apply Now</a>
+                                <a href={data.website}
+                                    className='company-btn apply'
+                                    target='__blank'>
+                                    Apply Now
+                                </a>
                             </div>
                             <p className='description'>{data.description}</p>
+
                             <h3 className='h3-single'>Requirements</h3>
+
                             <p className='content'>{data.requirements.content}</p>
                             <ul className='items'>
                                 {data.requirements.items.map((item, index) => (
                                     <li key={index}>{item}</li>
                                 ))}
                             </ul>
+                            
                             <h3 className='h3-single'>What you yill do</h3>
+
                             <p className='content'>{data.role.content}</p>
                             <ol className='items'>
                                 {data.role.items.map((item, index) => (
@@ -61,11 +74,15 @@ const Single = () => {
                         </div>
                     </section>
                     <footer>
-                            <div className="content-footer">
-                                <h2>{data.position}</h2>
-                                <p className='grey'>{data.company}</p>
-                            </div>
-                            <a href={data.website} className='company-btn apply' target='__blank'>Apply Now</a>
+                        <div className="content-footer">
+                            <h2>{data.position}</h2>
+                            <p className='grey'>{data.company}</p>
+                        </div>
+                        <a href={data.website}
+                            className='company-btn apply'
+                            target='__blank'>
+                            Apply Now
+                        </a>
                     </footer>
                 </>
             )}

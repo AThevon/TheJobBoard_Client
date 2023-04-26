@@ -5,6 +5,12 @@ button {
     border-radius: 5px;
     font-weight: 700;
     line-height: 1;
+    transition: .1s;
+}
+
+button:hover {
+    background-color: var(--light-violet);
+
 }
 
 button.load-more:hover {
@@ -14,7 +20,7 @@ button.load-more:hover {
 button:disabled {
     background-color: #727272;
     cursor: not-allowed;
-    transition: 0.2s;
+    transition: .2s;
 }
 
 button:disabled:hover {

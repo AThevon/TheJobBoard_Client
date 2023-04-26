@@ -32,19 +32,22 @@ const Home = () => {
             {isLoading && <p>Loading...</p>}
             {error && <p>{error}</p>}
             <section className="main-container">
-                {data && [...data].reverse().slice(0, numItems).map((offer, index) => (
-                    <div key={index}>
-                        <Card data={offer} key={index} />
-                    </div>
-                ))}
+                {data &&
+                    [...data].reverse().slice(0, numItems).map((offer, index) => (
+                        <div key={index}>
+                            <Card
+                                key={index}
+                                data={offer} />
+                        </div>
+                    ))}
             </section>
             {data && data.length > 12 && (
                 <div className="btn-load-more">
-                    <Button 
-                    content={ noMoreItems ? "No more offers..." : "Load more"} 
-                    onClick={handleLoadMore}
-                    className="load-more"
-                    disabled={noMoreItems}
+                    <Button
+                        content={noMoreItems ? "No more offers..." : "Load more"}
+                        onClick={handleLoadMore}
+                        className="load-more"
+                        disabled={noMoreItems}
                     />
                 </div>
             )}
