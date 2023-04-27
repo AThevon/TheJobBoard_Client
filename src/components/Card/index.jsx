@@ -11,19 +11,19 @@ const Card = ({ data }) => {
     const { theme } = useContext(ThemeContext);
 
     return (
-        <div className={`card ${theme === 'dark' && 'dark'}`}>
-            <Link to={`/offers/${data._id}`} className='link'>
+        <Link to={`/offers/${data._id}`} className='link'>
+            <div className={`card ${theme === 'dark' && 'dark'}`}>
                 <div className="main-logo" style={{ backgroundColor: data.logoBackground }}>
                     <img src={data.logo} alt={data.company} />
                 </div>
                 <p className='time grey'>
-                    {moment(data.postedAt).startOf('hour').fromNow()}<span> . </span>{data.contract}
+                    {moment(data.postedAt).startOf('hour').fromNow()}<span> . </span>{data.contract === 'full-time' ? 'Full Time' : 'Part Time'}
                 </p>
                 <h2 className='position'>{data.position}</h2>
                 <p className='company grey'>{data.company}</p>
                 <p className='location'>{data.location}</p>
-            </Link>
-        </div>
+            </div>
+        </Link>
     )
 }
 

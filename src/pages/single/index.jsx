@@ -2,9 +2,12 @@ import './index.css';
 import axios from 'axios';
 import { useContext } from 'react';
 import { ThemeContext } from '../../context/ThemeContext';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
+
 import moment from 'moment';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import Loader from '../../components/Loader';
 
@@ -13,27 +16,39 @@ const Single = () => {
 
     const { theme, isMobile } = useContext(ThemeContext);
 
+    // Setting of Toastify for alerts
+    const notifySuccess = () => toast.success('Offer deleted successfully');
+    const notifyError = () => toast.error('Error, please try again');
+
+    const navigate = useNavigate();
+
+    // Catch the id passed in the url to fetch the data of the offer
     const { id } = useParams();
 
     const url = `http://localhost:3001/api/offers/${id}`;
 
     const { data, error, isLoading } = useFetch(url);
 
+    // Delete the offer
     const handleDeleteOffer = () => {
         axios.delete(url)
             .then((res) => {
                 console.log(res.data);
-                window.location.replace('/');
+                notifySuccess();
+                navigate('/');
             })
-            .catch((err) => console.log(err));
+            .catch((err) => {
+                console.log(err);
+                notifyError();
+            }
+            );
     };
-
 
     return (
         <>
-            {isLoading && <Loader />}
-            {error && <p>{error}</p>}
-            {data && (
+            {error ? <p>{error}</p> :
+            isLoading ? <Loader /> :
+            data && (
                 <>
                     <section className={`single-section ${theme === 'dark' && 'dark'}`}>
                         <div className='header-single'>
@@ -56,7 +71,7 @@ const Single = () => {
                             <div className="main-title-single">
                                 <div className="title-single">
                                     <p className='time grey'>
-                                        {moment(data.postedAt).startOf('hour').fromNow()}<span> . </span>{data.contract}
+                                        {moment(data.postedAt).startOf('hour').fromNow()}<span> . </span>{data.contract === 'full-time' ? 'Full Time' : 'Part Time'}
                                     </p>
                                     <h2>{data.position}</h2>
                                     <p className='location'>{data.location}</p>
@@ -96,7 +111,10 @@ const Single = () => {
                             </div>
                         )}
                         <button
-                            className="del-btn"
+                            className="admin-btn update-btn"
+                            onClick={handleDeleteOffer}>Update this offer</button>
+                        <button
+                            className="admin-btn del-btn"
                             onClick={handleDeleteOffer}>Delete this offer</button>
                         <a href={data.website}
                             className='apply-btn'

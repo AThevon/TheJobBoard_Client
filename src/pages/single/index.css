@@ -176,14 +176,17 @@ footer.footer-single.dark {
     color: #9DAEC2;
 }
 
-footer .del-btn {
+footer .admin-btn {
     position: absolute;
-    right: 4rem;
-    bottom: 4rem;
-    background-color: #a02626;
     border: none;
     color: var(--white);
     cursor: pointer;
+}
+
+footer .del-btn {
+    background-color: #a02626;
+    right: 4rem;
+    bottom: 14rem;
 }
 
 footer .del-btn:hover {
@@ -191,6 +194,19 @@ footer .del-btn:hover {
 }
 
 
+footer .update-btn {
+    background-color: #424040;
+    right: 4rem;
+    bottom: 20rem;
+}
+
+footer .update-btn:hover {
+    background-color: #252525ab;
+}
+
+
+
+/* Responsive */
 
 @media screen and (max-width: 1366px) {
     section.single-section,
@@ -261,6 +277,11 @@ footer .del-btn:hover {
         margin-top: 5rem ;
     }
 
+    footer .update-btn {
+        right: 2rem;
+        bottom: 16rem;
+    }
+    
     footer .del-btn {
         right: 2rem;
         bottom: 10rem;

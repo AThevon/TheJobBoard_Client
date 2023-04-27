@@ -1,76 +1,65 @@
-h2.title-admin {
+h2.admin-title {
+    margin-top: 10rem;
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+
+
+.form-selector {
+    position: relative;
+    height: 40rem;
+    width: 40rem;
+    background-image: linear-gradient(-35deg, #606ae1 0%, #5964e0 50%, #3e418e  100%);
+    background-size: 200% auto;
+    border-radius: 25px;
+    margin: 10rem auto;
+    overflow: hidden;
+    transition: all 0.3s ease-out;
+}
+
+.form-selector:hover {
+    scale: 1.06;
+    background-position: right center;
+}
+
+
+.form-selector span {
+    display: block;
     position: absolute;
-    left: 50%;
-    top: 20rem;
-    transform: translateX(-50%);
-    background-color: var(--white);
-    padding: 2rem 12rem;
-    border-radius: 1.2rem;
-    margin-bottom: 1rem;
-    text-align: center;
-    font-size: 2.6rem;
+    top: 4rem;
+    left: 4rem;
+    text-align: start;
+    font-size: 3rem;
     font-weight: 700;
-    color: var(--violet);
-    box-shadow: 0 4px 5px 0  #00000015;
+    color: var(--white);
+    text-transform: uppercase;
+    transform: rotate(-30deg) translate(2rem, 0rem);
+    transition: all 0.3s ease-out;
 }
 
-form.form-admin {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height: 60vh;
-    padding-inline: 12rem;
-    margin-top: 16rem;
-    gap: 2rem;
+.form-selector:hover span {
+    font-size: 3.4rem;
+    top: 2rem;
+    left: 2rem;
+    transform: rotate(0deg) translate(1rem, 0);
 }
 
-.form-first-container,
-.form-second-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
-    height: 100%;
-}
-
-
-.form-admin-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    margin-bottom: 2rem;
-}
-
-
-form.form-admin label {
-    font-size: 1.6rem;
-    font-weight: 400;
-    margin-bottom: 1rem;
-}
-
-
-form.form-admin input,
-form.form-admin select,
-form.form-admin textarea {
-    width: 100%;
-    height: 100%;
-    padding: 0 1rem;
-    border: 1px solid #23232374;
-    border-radius: .4rem;
-    font-size: 1.6rem;
-    font-weight: 400;
-}
-
-
-
-
-button.btn-admin-submit {
+.form-selector::after {
+    content: '';
     position: absolute;
-    bottom: 4rem;
-    right: 4rem;
+    right: -8rem;
+    bottom: -10rem;
+    width: 25rem;
+    height: 25rem;
+    background-image: url(../../assets/briefcase.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    rotate: -30deg;
+    transition: all 0.3s ease-out;
+}
+
+.form-selector:hover::after {
+    bottom: -1rem;
+    right: 1rem;
 }

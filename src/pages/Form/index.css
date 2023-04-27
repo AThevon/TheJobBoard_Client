@@ -1,0 +1,260 @@
+h2.title-admin {
+    position: absolute;
+    left: 50%;
+    top: 20rem;
+    transform: translateX(-50%);
+    background-color: var(--white);
+    padding: 2rem 12rem;
+    border-radius: 1.2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: var(--violet);
+    box-shadow: 0 4px 5px 0  #00000015;
+}
+
+
+/* Form */
+
+form.form-admin {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding-inline: 12rem;
+    padding-block: 16rem 6rem;
+    margin-inline: auto;
+}
+
+.form-admin-container {
+    max-width: 60rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 2rem;
+}
+
+
+form.form-admin label {
+    margin-bottom: .6rem;
+    width: 100%;
+    text-align: start;
+}
+
+form.form-admin label.nested-label {
+    display: flex;
+    justify-content: space-between;
+}
+
+form.form-admin label span {
+    color: #b53434;
+    margin-right: 1rem;
+}
+
+
+form.form-admin input,
+form.form-admin select,
+form.form-admin textarea {
+    position: relative;
+    width: 100%;
+    padding: 1rem;
+    border-radius: .6rem;
+    background-color: #ececec;
+    transition: all .2s ease-out;
+}
+
+button.btn-admin-submit {
+    position: fixed;
+    right: 8rem;
+    bottom: 8rem;
+    background-color: var(--white);
+    color: var(--violet);
+    box-shadow: 0 4px 5px 0  #00000015;
+    font-size: 2rem;
+    padding: 2rem 6rem;
+    transition: all .2s ease-out;
+}
+
+button.btn-admin-submit:hover,
+button.btn-admin-submit:active,
+button.btn-admin-submit:focus {
+    background-color: var(--violet);
+    color: var(--white);
+    scale: 1.06;
+}
+
+
+select#contract {
+    height: 5rem;
+    text-align: center;
+    border: 0;
+    border-radius: 1rem;
+    font-size: 1.6rem;
+    font-weight: 400;
+    box-shadow: 0 4px 5px 0  #00000015;
+}
+
+select#contract:focus,
+select#contract:active {
+    outline: none;
+    box-shadow: 0;
+}
+
+
+textarea {
+    resize: none;
+}
+
+textarea:focus,
+textarea:active {
+    background-color: #fff !important;
+}
+
+textarea#description {
+    height: 20rem;
+    padding: 1rem;
+}
+
+textarea[id$="content"] {
+    height: 10rem;
+    padding: 1rem;
+    line-height: 1.4;
+    margin-bottom: 2rem;
+}
+
+
+input:focus,
+input:active {
+    scale: 1.02;
+    box-shadow: 0 4px 5px 0 #00000015;
+    border: none;
+    outline: none;
+    background-color: #fff !important;
+}
+
+.items-btns {
+    width: 100%;
+    display: flex;
+    border-radius: .6rem;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+
+button.items-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    height: 6rem;
+    border-radius: 0;
+}
+
+button.remove-btn.disabled span {
+    display: none;
+}
+
+button.remove-btn.disabled {
+    width: 0;
+    padding: 0;
+}
+
+button.remove-btn {
+    background-color: #878787;
+    color: var(--white);
+    border-radius: 0 .6rem .6rem 0;
+    transition: all .2s ease-out;
+}
+
+button.remove-btn:hover {
+    background-color: #b53434;
+}
+
+
+/* Dark Theme */
+
+h2.dark {
+    background-color: #222b3a;
+    color: var(--white);
+}
+
+form.form-admin.dark input,
+form.form-admin.dark textarea {
+    background-color: #222b3a;
+    color: var(--white);
+}
+
+form.form-admin.dark input:active,
+form.form-admin.dark input:focus,
+form.form-admin.dark textarea:active,
+form.form-admin.dark textarea:focus {
+    background-color: #3c495e !important;
+    color: var(--white);
+}
+
+form.form-admin.dark select {
+    background-color: #222b3a;
+    color: var(--white);
+}
+
+/* Responsive */
+
+@media screen and (max-width: 768px) {
+    h2.title-admin {
+        font-size: 2rem;
+        padding: 2rem 6rem;
+        margin-top: -1rem;
+    }
+
+    form.form-admin {
+        padding-inline: 6rem;
+        padding-block: 12rem 2rem;
+    }
+
+    button.btn-admin-submit {
+        right: 2rem;
+        bottom: 2rem;
+        font-size: 1.6rem;
+        padding: 1rem 3rem;
+    }
+
+    form.form-admin label {
+        font-size: 1.4rem;
+    }
+
+    form.form-admin input,
+    form.form-admin select,
+    form.form-admin textarea {
+        padding: .8rem;
+    }
+
+    form.form-admin select {
+        height: 4rem;
+    }
+
+    textarea#description {
+        height: 10rem;
+    }
+
+    textarea[id$="content"] {
+        height: 8rem;
+    }
+
+    .items-btns {
+        gap: 1rem;
+    }
+
+    button.items-btn {
+        height: 4rem;
+        width: 100%;
+        border-radius: .6rem;
+    }
+
+}
