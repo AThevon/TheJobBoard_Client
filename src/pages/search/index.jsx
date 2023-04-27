@@ -84,8 +84,6 @@ const Search = () => {
     };
 
 
-    console.log(dataSearch);
-
     return (
         <>
             <Searchbar
@@ -128,7 +126,6 @@ const Search = () => {
                                 )};
                             </>
                         )}
-
         </>
     );
 }

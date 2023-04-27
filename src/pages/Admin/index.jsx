@@ -1,11 +1,14 @@
 import './index.css';
 
+import { ToastContainer, toast } from 'react-toastify';
 import Button from '../../components/Button';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const Admin = () => {
-
+    // Setting of Toastify for alerts
+    const notifySuccess = () => toast.success('Offer added successfully');
+    const notifyError = () => toast.error('Please, fill in all fields');
 
     const [formData, setFormData] = useState({
         requirements: { content: '', items: [] },
@@ -18,9 +21,7 @@ const Admin = () => {
             ...prevFormData,
             [name]: value,
         }));
-        console.log(formData);
     };
-
 
     const handleInputNestedChange = (e) => {
         const { name, value } = e.target;
@@ -58,7 +59,7 @@ const Admin = () => {
         const isFormFilled = Object.values(formData).every((value) => value !== '');
 
         if (!isFormFilled) {
-            alert('Please fill in all form fields');
+            notifyError();
             return;
         }
 
@@ -70,6 +71,7 @@ const Admin = () => {
                 },
             });
             console.log(response.data);
+            notifySuccess();
         } catch (err) {
             console.log('fetching error :', err);
         }
@@ -123,13 +125,16 @@ const Admin = () => {
                     </div>
                     <div className='form-admin-container'>
                         <label htmlFor='contract'>Contract</label>
-                        <input
-                            type='text'
+                        <select
+                            type='select'
                             id='contract'
                             name='contract'
                             value={formData.contract}
-                            onChange={handleInputChange}
-                        />
+                            onChange={handleInputChange}>
+                            <option value=''>--Please choose an option--</option>
+                            <option value='full-time'>Full Time</option>
+                            <option value='part-time'>Part Time</option>
+                        </select>
                     </div>
                     <div className='form-admin-container'>
                         <label htmlFor='location'>Location</label>
