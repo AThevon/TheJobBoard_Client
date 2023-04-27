@@ -15,11 +15,16 @@
     display: flex;
     align-items: center;
     height: 8rem;
-    background-color: var(--white);
     width: 100%;
     font-size: 1.6rem;
+    background-color: var(--white);
 }
 
+.searchbar.dark li,
+.searchbar.dark li input {
+    background-color: var(--dark-blue);
+    color: var(--white);
+}
 
 li.first-input {
     border-radius: 5px 0 0 5px;
@@ -79,4 +84,42 @@ input[type="checkbox"]::before {
 li.third-input label {
     user-select: none;
     margin-inline: 2rem auto;
+}
+
+.filter-icon {
+    position: absolute;
+    right: 11rem;
+    top: 55%;
+    transform: translateY(-50%);
+}
+
+@media screen and (max-width: 1366px) {
+    .searchbar {
+        padding-inline: 4rem;
+    }
+    li label {
+        font-size: 1.4rem;
+        margin-inline: 0;
+    }
+}
+
+@media screen and (max-width: 769px) {
+    .searchbar {
+        top: 14rem;
+        padding-inline: 2.4rem;
+    }
+    .searchbar li {
+        height: 8rem;
+        border-radius: 6px;
+        overflow: hidden;
+        padding-left: 2.4rem;
+    }
+    .mobile-btn {
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        top: 1.6rem;
+        right: 4rem;
+        border-radius: 6px;
+    }
 }

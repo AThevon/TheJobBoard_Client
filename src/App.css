@@ -16,3 +16,17 @@ body {
   color: #000;
   background-color: #F4F6F8;
 }
+
+.App {
+  min-height: 100vh;
+  background-color: var(--light-grey);
+}
+
+.App.dark {
+  background-color: var(--midnight);
+  color: var(--white);
+}
+
+.no-hover-effects:hover {
+  pointer-events: none;
+}

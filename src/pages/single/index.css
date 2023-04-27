@@ -3,11 +3,23 @@ section.single-section {
     transform: translateY(-4rem);
 }
 
+section.single-section.dark .header-single,
+section.single-section.dark .main-single {
+    background-color: var(--dark-blue);
+    color: #9DAEC2;
+}
+
+
+section.single-section.dark h2 {
+    color: var(--white);
+}
+
 .header-single {
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: #fff;
+    text-align: start;
 }
 
 .single-logo {
@@ -31,7 +43,8 @@ section.single-section {
     font-size: 2.4rem;
 }
 
-a.company-btn {
+a.company-btn,
+a.apply-btn {
     padding: 1.6rem 3.6rem;
     border-radius: 5px;
     font-weight: 700;
@@ -39,19 +52,29 @@ a.company-btn {
     color: #5964E0;
     margin-right: 4rem;
     text-decoration: none;
+    transition: .2s;
 }
 
 a.company-btn:hover {
-    background-color: #5964E02c;
+    background-color: #5964e056;
 }
 
-a.company-btn.apply {
+.single-section.dark .company-btn {
+    background-color: #ffffff27;
+    color: var(--white);
+}
+.single-section.dark .company-btn:hover {
+    background-color: #ffffff42;
+}
+
+
+a.apply-btn {
     background-color: #5964E0;
     color: #fff;
 }
 
-a.company-btn.apply::hover {
-    background-color: #5964E0;
+a.apply-btn:hover {
+    background-color: #939BF4;
     color: #fff;
 }
 
@@ -130,20 +153,125 @@ h3.h3-single {
 
 
 
-footer {
+footer.footer-single {
+    position: relative;
     width: 100vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding-inline: 28rem;
-    background-color: #fff; 
+    background-color: var(--white);
     margin-top: 8rem;
     padding-block: 2.4rem;
     text-align: start;
     line-height: 2;
 }
 
-footer a.apply {
+footer.footer-single a.apply {
     margin: 0;
 }
 
+footer.footer-single.dark {
+    background-color: var(--dark-blue);
+    color: #9DAEC2;
+}
+
+footer .del-btn {
+    position: absolute;
+    right: 4rem;
+    bottom: 4rem;
+    background-color: #a02626;
+    border: none;
+    color: var(--white);
+    cursor: pointer;
+}
+
+footer .del-btn:hover {
+    background-color: #b71111ab;
+}
+
+
+
+@media screen and (max-width: 1366px) {
+    section.single-section,
+    footer.footer-single {
+        padding-inline: 4rem;
+    }
+    footer .del-btn {
+        right: 4rem;
+        bottom: 14rem;
+    }
+    a.apply-btn {
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    section.single-section {
+        padding-inline: 2.4rem;
+        transform: translateY(-1.4rem);
+    }
+
+    .header-single {
+        flex-direction: column;
+        text-align: center;
+        border-radius: 6px;
+    }
+
+    .header-single .main-logo {
+        height: 6rem;
+        width: 6rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .header-single .company-single {
+        margin-inline: 0;
+        align-items: center;
+        margin-block: 5rem 2.4rem;
+    }
+
+    .header-single h2 {
+        font-size: 2rem;
+    }
+
+    .header-single a.company-btn {
+        margin: 0;
+        margin-bottom: 3.2rem;
+    }
+
+    .main-single {
+        padding-inline: 2rem;
+        border-radius: 6px;
+    }
+
+    .main-single p.description,
+    .main-single p.content {
+        text-align: start;
+    }
+
+    .main-title-single {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .main-title-single a.apply-btn {
+        flex: 1;
+        width: 100%;
+        text-align: center;
+        margin-top: 5rem ;
+    }
+
+    footer .del-btn {
+        right: 2rem;
+        bottom: 10rem;
+    }
+    footer.footer-single {
+        padding-inline: 2rem;
+        margin-top: 0;
+    }
+    footer.footer-single a.apply-btn {
+    flex: 1;
+    text-align: center;
+    padding-block: 1.4rem;
+    }
+}

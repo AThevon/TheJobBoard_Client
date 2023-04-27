@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import useFetch from '../../hooks/useFetch';
 import { useNavigate, useLocation } from 'react-router-dom';
 
-import Header from '../../components/Header';
 import Searchbar from '../../components/Searchbar';
 import Card from '../../components/Card';
 import Button from '../../components/Button';
@@ -89,7 +88,6 @@ const Search = () => {
 
     return (
         <>
-            <Header />
             <Searchbar
                 value={value}
                 location={locationFilter}

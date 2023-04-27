@@ -1,30 +1,44 @@
 import './index.css';
+import axios from 'axios';
+import { useContext } from 'react';
+import { ThemeContext } from '../../context/ThemeContext';
 import { useParams } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
 import moment from 'moment';
 
-import Header from '../../components/Header';
 import Loader from '../../components/Loader';
 
 
 const Single = () => {
+
+    const { theme, isMobile } = useContext(ThemeContext);
+
     const { id } = useParams();
 
     const url = `http://localhost:3001/api/offers/${id}`;
 
     const { data, error, isLoading } = useFetch(url);
 
+    const handleDeleteOffer = () => {
+        axios.delete(url)
+            .then((res) => {
+                console.log(res.data);
+                window.location.replace('/');
+            })
+            .catch((err) => console.log(err));
+    };
+
+
     return (
         <>
-            <Header />
             {isLoading && <Loader />}
             {error && <p>{error}</p>}
             {data && (
-                <> 
-                    <section className='single-section'>
+                <>
+                    <section className={`single-section ${theme === 'dark' && 'dark'}`}>
                         <div className='header-single'>
                             <div
-                                className="single-logo"
+                                className={isMobile ? 'main-logo' : 'single-logo'}
                                 style={{ backgroundColor: data.logoBackground }}>
                                 <img src={data.logo} alt={data.company} />
                             </div>
@@ -48,7 +62,7 @@ const Single = () => {
                                     <p className='location'>{data.location}</p>
                                 </div>
                                 <a href={data.website}
-                                    className='company-btn apply'
+                                    className='apply-btn'
                                     target='__blank'>
                                     Apply Now
                                 </a>
@@ -63,8 +77,8 @@ const Single = () => {
                                     <li key={index}>{item}</li>
                                 ))}
                             </ul>
-                            
-                            <h3 className='h3-single'>What you yill do</h3>
+
+                            <h3 className='h3-single'>What you will do</h3>
 
                             <p className='content'>{data.role.content}</p>
                             <ol className='items'>
@@ -74,13 +88,18 @@ const Single = () => {
                             </ol>
                         </div>
                     </section>
-                    <footer>
-                        <div className="content-footer">
-                            <h2>{data.position}</h2>
-                            <p className='grey'>{data.company}</p>
-                        </div>
+                    <footer className={`footer-single ${theme === 'dark' && 'dark'}`}>
+                        {isMobile ? '' : (
+                            <div className="content-footer">
+                                <h2>{data.position}</h2>
+                                <p className='grey'>{data.company}</p>
+                            </div>
+                        )}
+                        <button
+                            className="del-btn"
+                            onClick={handleDeleteOffer}>Delete this offer</button>
                         <a href={data.website}
-                            className='company-btn apply'
+                            className='apply-btn'
                             target='__blank'>
                             Apply Now
                         </a>

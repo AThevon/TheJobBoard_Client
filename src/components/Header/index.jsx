@@ -1,4 +1,6 @@
 import './index.css';
+import { useContext } from 'react';
+import { ThemeContext } from '../../context/ThemeContext';
 import Logo from '../Logo';
 import Triangle from '../../assets/header-bg.svg'
 import SwitchMode from '../SwitchMode';
@@ -7,9 +9,13 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
 
+    const { isTablet } = useContext(ThemeContext);
+
     const triangles = [];
 
-    for (let i = 0; i < 3; i++) {
+    const nbTriangle = isTablet ? 2 : 3;
+
+    for (let i = 0; i < nbTriangle; i++) {
         triangles.push(<img src={Triangle} alt="triangle" key={i} />)
     }
 

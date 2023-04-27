@@ -1,7 +1,7 @@
 import './index.css';
 import { useState, useEffect } from 'react';
 import useFetch from '../../hooks/useFetch';
-import Header from '../../components/Header';
+
 import Searchbar from '../../components/Searchbar';
 import Card from '../../components/Card';
 import Button from '../../components/Button';
@@ -28,7 +28,6 @@ const Home = () => {
 
     return (
         <>
-            <Header />
             <Searchbar />
             {isLoading && <Loader />}
             {error && <p>{error}</p>}

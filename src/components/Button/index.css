@@ -13,6 +13,14 @@ button:hover {
 
 }
 
+.btn-load-more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 8rem;
+}
+
+
 button.load-more:hover {
     animation: 'btn-anim' .6s linear;
 }

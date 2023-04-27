@@ -4,13 +4,23 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
-
     background-color: var(--white);
     border-radius: 0.5rem;
     padding-inline: 3rem;
     height: 25rem;
     text-align: start;
-    /* box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); */
+}
+
+.card.dark {
+    background-color: var(--dark-blue);
+}
+
+.card h2 {
+    color: var(--dark-blue);
+}
+
+.card.dark h2 {
+    color: var(--white);
 }
 
 .main-logo {
@@ -37,11 +47,7 @@ p.time span {
 }
 
 .link {
-    color: #000;
     text-decoration: none;
-    font-size: 1.6rem;
-    font-weight: 700;
-    text-align: start;
 }
 
 h2.position {
