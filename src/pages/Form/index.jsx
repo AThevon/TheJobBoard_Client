@@ -110,7 +110,7 @@ const Form = () => {
             return;
         }
 
-        const url = `${process.env.REACT_APP_API_URL}/offers`;
+        const url = `http://localhost:3001/api/offers`;
         try {
             const response = await axios.post(url, formData, {
                 headers: {

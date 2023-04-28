@@ -9,7 +9,7 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <ThemeProvider>
-        <App apiUrl={process.env.REACT_APP_API_URL}/>
+        <App />
     </ThemeProvider>
 );
 
