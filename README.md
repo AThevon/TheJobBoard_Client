@@ -15,6 +15,11 @@ There is also a search bar that allows users to search for job offers using thre
 
 To create a new job offer, click on the admin button on the homepage, then on the button 'Create an offer', and fill out the form with the necessary details. To update or delete an existing job offer, click on the right button on the single page of the job offer you wish to update.
 
+## Demo Video
+
+https://www.loom.com/share/79709fc57f35423598d54698d0f394d0
+
+
 ## Known Issues and Future Development
 
 There are currently no known issues with the website, but some future plans for development include:
