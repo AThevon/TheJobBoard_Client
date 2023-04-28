@@ -11,7 +11,7 @@ const Home = () => {
     const [numItems, setNumItems] = useState(12);
     const [noMoreItems, setNoMoreItems] = useState(false);
 
-    const url = 'http://localhost:3001/api/offers';
+    const url = `${process.env.REACT_APP_API_URL}/offers`;
     const { data, error, isLoading } = useFetch(url);
 
 

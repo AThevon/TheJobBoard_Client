@@ -26,7 +26,7 @@ const UpdateForm = () => {
     
     const { id } = useParams();
 
-    const urlUpdate = `http://localhost:3001/api/offers/${id}`;
+    const urlUpdate = `${process.env.REACT_APP_API_URL}/offers/${id}`;
     
     useEffect(() => {
         console.log('useEffect');
@@ -133,7 +133,7 @@ const UpdateForm = () => {
             return;
         }
 
-        const url = `http://localhost:3001/api/offers/${id}`;
+        const url = `${process.env.REACT_APP_API_URL}/offers/${id}`;
         try {
             const response = await axios.put(url, formData, {
                 headers: {

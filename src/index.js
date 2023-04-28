@@ -5,10 +5,11 @@ import { ThemeProvider } from './context/ThemeContext';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <ThemeProvider>
-        <App />
+        <App apiUrl={process.env.REACT_APP_API_URL}/>
     </ThemeProvider>
 );
 

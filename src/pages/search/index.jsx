@@ -23,7 +23,7 @@ const Search = () => {
     const locationQuery = new URLSearchParams(location.search).get('location');
     const isFullTimeQuery = new URLSearchParams(location.search).get('isFullTime');
 
-    const [url, setUrl] = useState('http://localhost:3001/api/search');
+    const [url, setUrl] = useState(`${process.env.REACT_APP_API_URL}/search`);
 
     const handleLoadMore = () => {
         setNumItems(numItems + 12);
@@ -41,7 +41,7 @@ const Search = () => {
             params.push(`isFullTime=${isFullTimeQuery}`);
         }
         const queryString = params.join('&');
-        setUrl(`http://localhost:3001/api/search?${queryString}`);
+        setUrl(`${process.env.REACT_APP_API_URL}/search?${queryString}`);
     }, [searchQuery, locationQuery, isFullTimeQuery]);
 
 

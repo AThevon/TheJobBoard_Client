@@ -25,8 +25,7 @@ const Single = () => {
     // Catch the id passed in the url to fetch the data of the offer
     const { id } = useParams();
 
-    const url = `http://localhost:3001/api/offers/${id}`;
-
+    const url = `${process.env.REACT_APP_API_URL}/offers/${id}`;
     const { data, error, isLoading } = useFetch(url);
 
     // Update the offer
