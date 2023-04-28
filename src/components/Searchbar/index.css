@@ -42,7 +42,7 @@ li.second-input {
     border-inline: .5px solid #6e809849;
 }
 
-li.second-input input{
+li.second-input input {
     border: none;
     outline: none;
     color: #979797;
@@ -51,7 +51,7 @@ li.second-input input{
 }
 
 li.third-input {
-    border-radius:0 5px 5px 0;
+    border-radius: 0 5px 5px 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -61,25 +61,25 @@ li.third-input {
 }
 
 input[type="checkbox"] {
-    cursor: pointer;
-    margin: 0;
-    width: 2.4rem;
-    height: 2.4rem;
-    color: #979797;
-    position: relative;
-    background-color: #979797;
+    height: 20px;
+    width: 20px;
+    border-radius: 3px;
+    accent-color: var(--violet);
+    margin-right: 10px;
 }
 
-/* 
-input[type="checkbox"]::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 2.4rem;
-    height: 2.4rem;
-    background-color: #979797;
-} */
+input[type="checkbox"]:active {
+    background-color: #5964e0 0.5;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #5964e0;
+    filter: none;
+}
+
+input[type="checkbox"] {
+    filter: brightness(0) saturate(100%) invert(94%) sepia(0%) saturate(993%) hue-rotate(172deg) brightness(100%) contrast(87%);
+}
 
 li.third-input label {
     user-select: none;
@@ -97,6 +97,7 @@ li.third-input label {
     .searchbar {
         padding-inline: 4rem;
     }
+
     li label {
         font-size: 1.4rem;
         margin-inline: 0;
@@ -108,12 +109,14 @@ li.third-input label {
         top: 14rem;
         padding-inline: 2.4rem;
     }
+
     .searchbar li {
         height: 8rem;
         border-radius: 6px;
         overflow: hidden;
         padding-left: 2.4rem;
     }
+
     .mobile-btn {
         position: absolute;
         margin: 0;

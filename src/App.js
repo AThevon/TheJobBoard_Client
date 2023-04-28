@@ -12,6 +12,7 @@ import Single from './pages/single';
 import Search from './pages/search';
 import Admin from './pages/Admin';
 import Form from './pages/Form';
+import UpdateForm from './pages/UpdateForm';
 import Error404 from './pages/Error404';
 import Header from './components/Header';
 
@@ -20,7 +21,7 @@ function App() {
   const { theme } = useContext(ThemeContext);
 
   return (
-      <div className={`App ${theme === 'dark' && 'dark'} 
+      <div className={`App ${theme === 'dark' ? 'dark' : ''} 
       `}>
         <ToastContainer />
         <Router>
@@ -31,6 +32,7 @@ function App() {
             <Route path="/search" element={<Search />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="/form" element={<Form />} />
+            <Route path="/update/:id" element={<UpdateForm />} />
             <Route path="*" element={<Error404 />} />
           </Routes>
         </Router>

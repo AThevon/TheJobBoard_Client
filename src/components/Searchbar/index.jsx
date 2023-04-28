@@ -1,27 +1,29 @@
 import './index.css';
-import { useState, useContext, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { ThemeContext } from '../../context/ThemeContext';
 import { useNavigate } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass, faLocationDot, faFilter } from '@fortawesome/free-solid-svg-icons'
 
-
 import Button from '../Button';
+import ModalSearch from '../ModalSearch';
 
 const Searchbar = () => {
-    const [isModalOpen, setModalOpen] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const { theme, isTablet, isMobile } = useContext(ThemeContext);
 
     const navigate = useNavigate();
 
+    // Search params
     const [searchParams, setSearchParams] = useState({
         q: '',
         location: '',
         isFullTime: false
     });
 
+    // Title
     const handleChange = (e) => {
         setSearchParams(prevParams => ({
             ...prevParams,
@@ -29,6 +31,7 @@ const Searchbar = () => {
         }));
     };
 
+    // Location
     const handleLocationChange = (e) => {
         setSearchParams(prevParams => ({
             ...prevParams,
@@ -36,6 +39,7 @@ const Searchbar = () => {
         }));
     };
 
+    // Checkbox
     const handleIsFullTimeChange = (e) => {
         setSearchParams(prevParams => ({
             ...prevParams,
@@ -43,6 +47,7 @@ const Searchbar = () => {
         }));
     };
 
+    // Submit form
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -61,29 +66,37 @@ const Searchbar = () => {
         }
 
         const queryString = params.join('&');
+
+        isModalOpen && setIsModalOpen(false)
+
         navigate(`/search?${queryString}`);
     };
 
+    // Show modal on mobile
     const handleFilter = (e) => {
         e.preventDefault();
-        setModalOpen(true);
+        setIsModalOpen(!isModalOpen);
     }
-
-    // const handleModalClose = () => {
-    //     setModalOpen(false);
-    // }
 
     useEffect(() => {
         if (isModalOpen) {
-            console.log('modal open');
+            document.body.style.overflow = 'hidden';
         } else {
-                console.log('modal closed');
+            document.body.style.overflow = 'unset';
         }
-    }, [isModalOpen])
+    }, [isModalOpen]);
+
 
 
     return (
         <form>
+            {isModalOpen && <ModalSearch
+                searchParams={searchParams}
+                handleLocationChange={handleLocationChange}
+                handleIsFullTimeChange={handleIsFullTimeChange}
+                handleSubmit={handleSubmit}
+                handleCloseModal={() => setIsModalOpen(false)}
+            />}
             <ul className={`searchbar ${theme === 'dark' && 'dark'}`}>
                 <li className="first-input">
                     {isMobile ? '' : (<FontAwesomeIcon
@@ -108,7 +121,7 @@ const Searchbar = () => {
                         icon={faFilter} 
                         style={{
                             height: "2.4rem",
-                            color: theme === 'dark' ? '#fff' : '#6E8098',
+                            color: theme === 'dark' ? '#f9f9f9' : '#6E8098',
                         }}
                         />
                         </div>

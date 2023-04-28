@@ -11,7 +11,7 @@ const useFetch = (url) => {
         
         async function fetchData() {
             try {
-                const response = await axios(url);
+                const response = await axios.get(url);
                 setData(response.data);
             } catch (err) {
                 console.log('fetching error :', err);

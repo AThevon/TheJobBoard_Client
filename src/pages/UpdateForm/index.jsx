@@ -1,29 +1,52 @@
-import './index.css';
-
-import { useState, useContext } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { ThemeContext } from '../../context/ThemeContext';
+import { useNavigate, useParams } from 'react-router-dom';
+import axios from 'axios';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSquarePlus, faSquareMinus } from '@fortawesome/free-solid-svg-icons';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Button from '../../components/Button';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
 
-const Form = () => {
-    const { theme } = useContext(ThemeContext);
+import Button from '../../components/Button';
+
+const UpdateForm = () => {
     // Setting of Toastify for alerts
     const notifySuccess = () => toast.success('Offer added successfully');
     const notifyError = () => toast.error('Please, fill in all fields');
-
+    
+    const { theme } = useContext(ThemeContext);
     const navigate = useNavigate();
 
-    // Setting of the form data
     const [formData, setFormData] = useState({
         requirements: { content: '', items: [] },
         role: { content: '', items: [] },
     });
+    const [dataUpdate, setDataUpdate] = useState(null);
+    
+    const { id } = useParams();
+
+    const urlUpdate = `http://localhost:3001/api/offers/${id}`;
+    
+    useEffect(() => {
+        console.log('useEffect');
+        const fetchUpdate = async () => {
+            try {
+                const response = await axios.get(urlUpdate);
+                setDataUpdate(response.data);
+            } catch (err) {
+                console.log('fetching error :', err);
+            }
+        };
+        fetchUpdate();
+    }, [urlUpdate]);
+
+    // Setting of the form data
+    useEffect(() => {
+        if (dataUpdate) {
+            setFormData(dataUpdate);
+        }
+    }, [dataUpdate]);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -110,21 +133,22 @@ const Form = () => {
             return;
         }
 
-        const url = 'http://localhost:3001/api/offers';
+        const url = `http://localhost:3001/api/offers/${id}`;
         try {
-            const response = await axios.post(url, formData, {
+            const response = await axios.put(url, formData, {
                 headers: {
                     'Content-Type': 'application/json',
                 },
             });
             console.log(response.data);
             notifySuccess();
-            navigate('/');
+            navigate(`/offers/${id}`);
         } catch (err) {
             console.log('fetching error :', err);
             notifyError();
         }
     };
+
 
 
     return (
@@ -284,7 +308,7 @@ const Form = () => {
                     {itemsInputs(formData.role.items, "role")}
                 </div>
                 <Button
-                    content='Add a new offer'
+                    content='Modify the offer'
                     className='btn-admin-submit'
                     onClick={handleSubmit}
                 />
@@ -294,4 +318,4 @@ const Form = () => {
     )
 }
 
-export default Form
+export default UpdateForm

@@ -9,7 +9,7 @@ section.main-container {
     margin-bottom: 8rem;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1280px) {
     section.main-container {
         grid-template-columns: repeat(2, 1fr);
         padding-inline: 4rem;

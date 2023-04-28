@@ -40,7 +40,6 @@ form.form-admin {
     margin-bottom: 2rem;
 }
 
-
 form.form-admin label {
     margin-bottom: .6rem;
     width: 100%;
@@ -55,6 +54,7 @@ form.form-admin label.nested-label {
 form.form-admin label span {
     color: #b53434;
     margin-right: 1rem;
+    text-align: end;
 }
 
 
@@ -129,8 +129,8 @@ textarea[id$="content"] {
 }
 
 
-input:focus,
-input:active {
+form.form-admin input:focus,
+form.form-admin input:active {
     scale: 1.02;
     box-shadow: 0 4px 5px 0 #00000015;
     border: none;
@@ -209,7 +209,7 @@ form.form-admin.dark select {
 @media screen and (max-width: 768px) {
     h2.title-admin {
         font-size: 2rem;
-        padding: 2rem 6rem;
+        padding: 2rem 3rem;
         margin-top: -1rem;
     }
 

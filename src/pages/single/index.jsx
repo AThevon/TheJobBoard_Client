@@ -29,6 +29,11 @@ const Single = () => {
 
     const { data, error, isLoading } = useFetch(url);
 
+    // Update the offer
+    const handleUpdateOffer = () => {
+        navigate(`/update/${id}`);
+    };
+
     // Delete the offer
     const handleDeleteOffer = () => {
         axios.delete(url)
@@ -112,7 +117,7 @@ const Single = () => {
                         )}
                         <button
                             className="admin-btn update-btn"
-                            onClick={handleDeleteOffer}>Update this offer</button>
+                            onClick={handleUpdateOffer}>Update this offer</button>
                         <button
                             className="admin-btn del-btn"
                             onClick={handleDeleteOffer}>Delete this offer</button>
