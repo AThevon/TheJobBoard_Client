@@ -11,10 +11,8 @@
   --main-font: 'Kumbh Sans', sans-serif;
 }
 
-body {
-  font-family: var(--main-font);
-  color: #000;
-  background-color: #F4F6F8;
+html {
+  overflow-x: hidden;
 }
 
 .App {
@@ -22,11 +20,13 @@ body {
   background-color: var(--light-grey);
 }
 
+body {
+  font-family: var(--main-font);
+  color: #000;
+  background-color: #F4F6F8;
+}
+
 .App.dark {
   background-color: var(--midnight);
   color: var(--white);
-}
-
-.no-hover-effects:hover {
-  pointer-events: none;
 }

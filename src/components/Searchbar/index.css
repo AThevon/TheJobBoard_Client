@@ -83,7 +83,7 @@ input[type="checkbox"] {
 
 li.third-input label {
     user-select: none;
-    margin-inline: 2rem auto;
+    margin-inline: 1rem auto;
 }
 
 .filter-icon {
