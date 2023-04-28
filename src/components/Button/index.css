@@ -35,6 +35,13 @@ button:disabled:hover {
     animation: 'btn-anim-disabled' .3s linear;
 }
 
+button.btn-return {
+    position: absolute;
+    left: 7rem;
+    top: 20rem;
+    transform: translate(0, 0);
+}
+
 @keyframes btn-anim {
     0%, 100% {
         transform: scale(1);
@@ -54,5 +61,12 @@ button:disabled:hover {
     }
     70% {
         transform: translateX(6px);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    button.btn-return {
+        left: 2rem;
+        font-size: 1.4rem;
     }
 }

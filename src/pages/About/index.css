@@ -1,0 +1,45 @@
+section.about {
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 8rem;
+    gap: 8rem;
+}
+
+section.about h2 {
+    text-align: start;
+    margin-block: 4rem .8rem;
+}
+
+
+section.about p {
+    font-size: 1.6rem;
+    padding-bottom: 1.5rem;
+    line-height: 2;
+    text-align: start;
+}
+
+.btn-about {
+    margin-block: 4rem;
+}
+
+@media screen and (max-width: 1024px) {
+    section.about {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+    }
+    section.about h2 {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    section.about {
+        padding-inline: 2rem;
+        padding-bottom: 4rem;
+    }
+    section.about p {
+        padding-inline: 0;
+    }
+}

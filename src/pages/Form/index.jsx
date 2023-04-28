@@ -130,7 +130,10 @@ const Form = () => {
     return (
         <>
             <h2 className={`title-admin ${theme === 'dark' ? 'dark' : ''}`}>New Offer</h2>
-
+            <Button 
+                className='btn-return'
+                onClick={() => navigate('/')}
+                content='Go back' />
             <form className={`form-admin ${theme === 'dark' ? 'dark' : ''}`}>
                 <div className='form-admin-container'>
                     <label htmlFor='company'>Name of the company</label>

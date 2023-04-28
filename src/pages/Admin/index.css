@@ -1,29 +1,42 @@
 h2.admin-title {
-    margin-top: 6rem;
+    margin: 4rem auto;
     font-size: 2.6rem;
     text-transform: uppercase;
+    padding: 2rem 2rem;
+    border-radius: 1rem;
+    background-color: #ffffff;
+    width:35rem;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.134);
 }
 
+h2.admin-title.dark {
+    background-color: var(--dark-blue);
+}
 
-.form-selector {
+section.admin-containers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.admin-selector {
     position: relative;
     height: 35rem;
     width: 35rem;
-    background-image: linear-gradient(-35deg, #606ae1 0%, #5964e0 50%, #3e418e  100%);
     background-size: 200% auto;
     border-radius: 25px;
-    margin: 6rem auto;
     overflow: hidden;
     transition: all 0.3s ease-out;
 }
 
-.form-selector:hover {
-    scale: 1.06;
+.admin-selector:hover {
+    scale: 1.04;
     background-position: right center;
 }
 
 
-.form-selector span {
+.admin-selector span {
     display: block;
     position: absolute;
     top: 4rem;
@@ -35,31 +48,90 @@ h2.admin-title {
     text-transform: uppercase;
     transform: rotate(-30deg) translate(2rem, 0rem);
     transition: all 0.3s ease-out;
+    transition-delay: .07s;
 }
 
-.form-selector:hover span {
+.admin-selector:hover span {
     font-size: 3rem;
     top: 2rem;
     left: 2rem;
     transform: rotate(0deg) translate(1rem, 0);
 }
 
-.form-selector::after {
+.admin-selector::after {
     content: '';
     position: absolute;
-    right: -8rem;
-    bottom: -10rem;
-    width: 20rem;
-    height: 20rem;
-    background-image: url(../../assets/briefcase.svg);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    rotate: -30deg;
     transition: all 0.3s ease-out;
 }
 
-.form-selector:hover::after {
-    bottom: -1rem;
+
+/* Post an offer */
+.post-selector {
+    background-image: linear-gradient(-35deg, #1D976C 0%, #5da277  51%, #1D976C  100%);
+}
+.post-selector::after {
+    background-image: url(../../assets/briefcase.svg);
+    right: -5rem;
+    bottom: -7rem;
+    width: 20rem;
+    height: 20rem;
+    rotate: -30deg;
+}
+
+.post-selector:hover::after {
+    bottom: 0rem;
+    right: 1.6rem;
+    rotate: 0deg;
+}
+
+/* About us */
+.about-selector {
+    background-image: linear-gradient(-35deg, #606ae1 0%, #5964e0 50%, #3e418e  100%);
+}
+
+.about-selector::after {
+    background-image: url(../../assets/about.svg);
+    right: -6rem;
+    bottom: -9rem;
+    width: 20rem;
+    height: 20rem;
+    rotate: -30deg;
+}
+
+.about-selector:hover::after {
+    bottom: 0rem;
     right: 1rem;
+    rotate: 0deg;
+}
+
+/* Github */
+.github-selector {
+    background-image: linear-gradient(-35deg, #16222A 0%, #233a46  50%, #16222A  100%);
+}
+
+.github-selector::after {
+    background-image: url(../../assets/octocat.svg);
+    right: -8rem;
+    bottom: -9rem;
+    width: 20rem;
+    height: 20rem;
+    rotate: -30deg;
+}
+
+.github-selector:hover::after {
+    bottom: 1rem;
+    right: -1rem;
+    rotate: 0deg;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 1024px) {
+    section.admin-containers {
+        flex-direction: column;
+        padding-bottom: 6rem;
+    }
 }

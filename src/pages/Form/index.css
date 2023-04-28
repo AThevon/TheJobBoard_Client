@@ -40,6 +40,10 @@ form.form-admin {
     margin-bottom: 2rem;
 }
 
+form.form-admin:nth-last-child(1) {
+    padding-bottom: 12rem;
+}
+
 form.form-admin label {
     margin-bottom: .6rem;
     width: 100%;
@@ -219,8 +223,8 @@ form.form-admin.dark select {
     }
 
     button.btn-admin-submit {
-        right: 2rem;
-        bottom: 2rem;
+        right: 3rem;
+        bottom: 6rem;
         font-size: 1.6rem;
         padding: 1rem 3rem;
     }
